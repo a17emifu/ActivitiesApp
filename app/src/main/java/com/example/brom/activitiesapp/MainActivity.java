@@ -25,12 +25,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_main);
+        //Arraylist för ListView
         String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
         List<String> listdata =new ArrayList<String>(Arrays.asList(mountainNames));
+        //ArrayAdapter för ListView
         ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview,R.id.my_item_textview,listdata);
         ListView myListView = (ListView)findViewById(R.id.my_listview);
         myListView.setAdapter(adapter);
+        //Intent för att gå till sidan "MountainDetailsActivity"
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View v, int i, long id) {

@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//Klass för recyclerview, layoutmanager och adapter för cardview
 public class MountainDetailsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -30,14 +31,14 @@ public class MountainDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mountain_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        //Sätter recyclerview, layoutmanager och adapter för cardview
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         adapter= new RecyclerAdapter();
         recyclerView.setAdapter(adapter);
 
-
+        //Man kan gå tillbaks till förra sidan genom bakåt knappen
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
